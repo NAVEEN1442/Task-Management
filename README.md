@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+Task Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This README provides detailed instructions on setting up and running the Task Management Application. It also explains the project structure and design decisions made during development.
 
-## Available Scripts
+Project Structure
 
-In the project directory, you can run:
+Frontend
 
-### `npm start`
+src/: Contains the React application source code.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+components/: Reusable components used throughout the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+AddTaskModal.js: Modal for adding and editing tasks.
 
-### `npm test`
+CategorySlider.js: Slider for navigating between task categories.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+TaskList.js: Displays the list of tasks based on category.
 
-### `npm run build`
+TaskItem.js: Represents individual task details.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+hooks/: Custom hooks for handling state and side effects.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+pages/: Page components representing different views.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Home.js: Main page displaying the task management UI.
 
-### `npm run eject`
+services/: API interaction and async operations.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+taskAPI.js: Functions to interact with task-related endpoints.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+App.js: Main application component.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+index.js: Entry point for the React application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Backend
 
-## Learn More
+src/: Contains the Node.js backend source code.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+controllers/: Logic for handling HTTP requests.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+taskController.js: Handles CRUD operations for tasks.
 
-### Code Splitting
+streamingController.js: Handles streaming data operations.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+models/: Defines database schemas and models.
 
-### Analyzing the Bundle Size
+taskModel.js: Task schema definition.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+routes/: Route definitions for the API.
 
-### Making a Progressive Web App
+taskRoutes.js: Routes for task-related endpoints.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+streamingRoutes.js: Routes for streaming data.
 
-### Advanced Configuration
+services/: Business logic and utility functions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+app.js: Application setup and middleware configuration.
 
-### Deployment
+server.js: Entry point for the Node.js application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Setup and Run Instructions
 
-### `npm run build` fails to minify
+Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Clone the Repository:
+
+git clone <repository-url>
+
+Navigate to the Frontend Directory:
+
+cd frontend
+Install Dependencies:
+
+npm install
+Set Up Environment Variables:
+
+Create a .env file in the root of the frontend directory and add the API URL for the backend:
+
+REACT_APP_API_URL=<your-backend-api-url>
+Start the Development Server:
+
+npm start
+Open the Application:
+
+Visit http://localhost:3000 in your browser.
+
+Backend
+
+Navigate to the Backend Directory:
+
+cd backend
+Install Dependencies:
+
+npm install
+Set Up Environment Variables:
+
+Create a .env file in the root of the backend directory and add the necessary environment variables (e.g., database connection strings, API keys).
+Start the Server:
+
+npm start
+Test the API Endpoints:
+
+Use a tool like Postman to interact with the backend API endpoints.
