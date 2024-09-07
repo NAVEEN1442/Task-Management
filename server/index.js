@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors"); // Import cors
+const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -7,14 +7,13 @@ const PORT = process.env.PORT || 4000;
 const database = require("./config/database");
 const taskRouter = require("./routes/task");
 
-// Initialize Express app
 const app = express();
 
 // CORS configuration
 const allowedOrigins = [
-  'http://localhost:3000', // Development environment
-  'https://task-management-zeta-lilac.vercel.app', // Production environment
-  'https://gathering-astrologer.vercel.app' // Another environment if needed
+  'http://localhost:3000',
+  'https://task-management-zeta-lilac.vercel.app',
+  // Add more origins if needed
 ];
 
 app.use(cors({
@@ -25,9 +24,9 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Specify allowed methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
-  credentials: true // Allow credentials if needed
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 // Connect to the database
