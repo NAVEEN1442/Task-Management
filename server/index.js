@@ -11,12 +11,15 @@ const taskRouter = require("./routes/task");
 const app = express();
 
 // CORS configuration
-const allowedOrigins = ['http://localhost:3000', 'https://gathering-astrologer.vercel.app'];
+const allowedOrigins = [
+  'http://localhost:3000', // Development environment
+  'https://task-management-zeta-lilac.vercel.app', // Production environment
+  'https://gathering-astrologer.vercel.app' // Another environment if needed
+];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Check if the origin is allowed
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
