@@ -6,7 +6,7 @@ const {
     fetchTaskByID,
     updateTaskByID,
     deleteTask
-} = require("../controller/task");
+} = require("../controller/Task.js");
 
 // Define routes
 router.post("/tasks", createTask); // Route to create a task
